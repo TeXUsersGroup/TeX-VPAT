@@ -1,6 +1,7 @@
 \documentclass{report}
 
 \usepackage{hyperref}
+\usepackage{makecell}
 \setcounter{secnumdepth}{-1}
 \begin{document}
 \title{\TeX Live Accessibility Conformance Report\\
@@ -96,14 +97,37 @@ a certain level of accessibility for all documentation.  However, the
 full audit of the documentation for all 7300+ packages created by many
 thousands of volunteers is not feasible at this time.  \TeX\ Users
 group supports the efforts of making all \TeX\ documentation fully
-accessible.  
-\newpage
-
-\input{Table1}
+accessible.
 
 \newpage
 
-\input{EN301549Report}
+\section{Table 1: Success Criteria, Level A}
+
+\begin{table}[htp]
+\caption{Notes}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+	\hline
+	Criteria & Conformance Level & Remarks and Explanations \\
+	\hline
+	1.1.1 Non-text Content (Level A) \\ Also applies to: \\ EN 301 549 Criteria: \\ 
+	\begin{itemize} 
+		\item 9.1.1.1 (Web) \\
+		\item 10.1.1.1 (Non-web development) \\
+		\item 11.1.1.1.1 (Open Functionality Software) \\
+		\item 11.1.1.1.2 (Closed Functionality Software) \\
+		\item 11.8.2 (Authoring Tool)
+		\item 12.1.2 (Product Docs)
+		\item 12.2.4 (Support Docs)
+	\end{itemize}
+	
+	& \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}
+
+
 \end{document}
 
 %%% Local Variables:
