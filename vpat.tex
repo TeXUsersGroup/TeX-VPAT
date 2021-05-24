@@ -1,6 +1,14 @@
-\documentclass{report}
-
+\documentclass[a4paper]{report}
+\usepackage{array}
 \usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[a4paper, landscape, margin=0.5in]{geometry}
 \setcounter{secnumdepth}{-1}
 \begin{document}
 \title{\TeX Live Accessibility Conformance Report\\
@@ -56,6 +64,7 @@ more than 460~programs and more than 7300~software packages.
   \item[President:] \href{mailto:president@tug.org}{president@tug.org}
   \end{description}
 
+\newpage
 
 \section{Notes}
 \label{sec:note}
@@ -96,8 +105,90 @@ a certain level of accessibility for all documentation.  However, the
 full audit of the documentation for all 7300+ packages created by many
 thousands of volunteers is not feasible at this time.  \TeX\ Users
 group supports the efforts of making all \TeX\ documentation fully
-accessible.  
+accessible.
 
+\newpage
+\section{Success Criteria, Level A}
+\begin{longtable}{|l|l|l|}
+    \hline
+	Criteria & Conformance Level & Remarks and Explanations \\
+	\hline
+	\href{https://www.w3.org/TR/WCAG20/#text-equiv-all}{1.1.1 Non-text Content (Level A)} &
+ 	\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt}{1.2.1 Audio-only and Video only (Prerecorded)}(Level A) &
+ 	\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} 
+ 	\hline
+ 	\href{https://www.w3.org/TR/WCAG20/#media-equiv-captions}{1.2.2 Captions Prerecorded} (Level A) &
+ 	\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} 
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc}{1.2.3 Audio Description or Media Alternative (Prerecorded)} &
+ 	\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic}{1.3.1 Info and Relationships} (Level A) &
+ 	\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} 
+ 	\hline \newpage \hline
+ 	Criteria & Conformance Level & Remarks and Explanations \\
+ 	\hline
+    \href{http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic}{1.3.2 Meaningful Sequence} (Level A) &
+ 	\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \hline
+ 	\href{http://www.w3.org/TR/WCAG20/#content-structure-separation-understanding}{1.3.3 Sensory Characteristics} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} 
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color}{1.4.1 Use of Color} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} 
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio}{1.4.2 Audio Control} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable}{2.1.1 Keyboard} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping}{2.1.2 No Keyboard Trap} (Level A) &\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{https://www.w3.org/TR/WCAG21/#character-key-shortcuts}{2.1.4 Character Key Shortcuts} (Level A 2.1 only) &\makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#time-limits-required-behaviors}{2.2.1 Timing Adjustable} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline \newpage \hline
+ 	Criteria & Conformance Level & Remarks and Explanations \\
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#time-limits-pause}{Pause, Stop, Hide} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#seizure-does-not-violate}{2.3.1 Three Flashes or Below Threshold} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip}{2.4.1 Bypass Blocks} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title}{2.4.2 Page Titled} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order}{2.4.3 Focus Order} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs}{2.4.4 Link Purpose (In Context)} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{https://www.w3.org/TR/WCAG21/#pointer-gestures}{2.5.1 Pointer Gestures} (Level A 2.1 only) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{https://www.w3.org/TR/WCAG21/#pointer-cancellation}{2.5.2 Pointer Cancellation} (Level A 2.1 only) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline \newpage \hline
+ 	Criteria & Conformance Level & Remarks and Explanations \\
+ 	\hline
+ 	\href{https://www.w3.org/TR/WCAG21/#label-in-name}{2.5.3 Label in Name} (Level A 2.1 only) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{https://www.w3.org/TR/WCAG21/#motion-actuation}{2.5.4 Motion Actuation} (Level A 2.1 only) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id}{3.1.1 Language of Page} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#consistent-behavior-receive-focus}{3.2.1 On Focus} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#consistent-behavior-unpredictable-change}{3.2.2 On Input} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#minimize-error-identified}{3.3.1 Error Identification} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#minimize-error-cues}{3.3.2 Labels or Instructions} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#ensure-compat-parses}{4.1.1 Parsing} (Level A) & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\href{http://www.w3.org/TR/WCAG20/#ensure-compat-rsv}{4.1.2 Name, Role, Value} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:} & \makecell{Web: \\ Electronic Docs: \\ Software \\ Closed: \\ Authoring Tool:}
+ 	\hline
+ 	\end{longtable}
+% \begin{longtable}{|l|l|l|}
+%     \hline
+% 	Criteria & Conformance Level & Remarks and Explanations \\ \hline
+% \end{longtable}
 
 
 \end{document}
