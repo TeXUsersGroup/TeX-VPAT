@@ -1,10 +1,5 @@
-\documentclass[a4paper]{report}
-\usepackage{array}
-\usepackage{hyperref}
-\usepackage{makecell}
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage{blindtext}
+\documentclass{report}
+\usepackage[colorlinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{longtable}
@@ -204,7 +199,7 @@ In the tables below the success criteria apply to \emph{Web} and
 \emph{Electronic Docs} paragraphs of VPAT.
 
 
-\section{Table~1:  Success Criteria, Level A}
+\subsection{Table~1:  Success Criteria, Level A}
 \begin{longtable}{p{0.5\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}}
   \toprule
   Criteria & Conformance Level & Remarks and Explanations \\
@@ -265,6 +260,38 @@ In the tables below the success criteria apply to \emph{Web} and
   \href{http://www.w3.org/TR/WCAG20/#ensure-compat-parses}{4.1.1 Parsing} (Level A) & Supports\\
   \href{http://www.w3.org/TR/WCAG20/#ensure-compat-rsv}{4.1.2 Name, Role, Value} & Supports\\
 \end{longtable}
+
+\subsection{Table~2:  Success Criteria, Level AA}
+\begin{longtable}{p{0.5\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \href{http://www.w3.org/TR/WCAG20/#media-equiv-real-time-captions}{1.2.4
+  Captions (Live)} (Level AA) & Not Applicable\\
+  \href{http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc-only}{1.2.5
+  Audio Description (Prerecorded)} (Level AA) & Not Applicable\\
+  \href{https://www.w3.org/TR/WCAG21/#orientation}{1.3.4 Orientation}
+  (Level AA 2.1 only) & Supports\\
+  \href{https://www.w3.org/TR/WCAG21/#identify-input-purpose}{1.3.5
+  Identify Input Purpose} (Level AA 2.1 only) & Supports\\
+  \href{http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast}{1.4.3
+  Contrast (Minimum)} (Level AA) & Supports\\
+  \href{https://www.w3.org/TR/WCAG21/#resize-text}{1.4.4 Resize text}
+  (Level AA) & Supports\\
+  \href{http://www.w3.org/TR/WCAG20/#visual-audio-contrast-text-presentation}{1.4.5
+  Images of Text} (Level AA) & Supports\\
+  \href{https://www.w3.org/TR/WCAG21/#reflow}{1.4.10 Reflow} (Level AA
+  2.1 only) & Supports\\
+  \href{https://www.w3.org/TR/WCAG21/#non-text-contrast}{1.4.11
+  Non-text Contrast} (Level AA 2.1 only) & Supports\\
+  \href{https://www.w3.org/TR/WCAG21/#text-spacing}{1.4.12 Text
+  Spacing} (Level AA 2.1 only) & Supports\\
+  
+\end{longtable}
+
 
 \section{Revised Section~508 Report}
 \label{sec:sec508}
