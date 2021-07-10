@@ -1,10 +1,10 @@
 \documentclass{report}
-\usepackage[colorlinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{ragged2e}
+\usepackage[colorlinks]{hyperref}
 \setcounter{secnumdepth}{-1}
 \begin{document}
 \title{\TeX Live Accessibility Conformance Report\\
@@ -201,6 +201,7 @@ In the tables below the success criteria apply to \emph{Web} and
 
 \clearpage
 \subsection{Table~1:  Success Criteria, Level A}
+\label{sec:WCAG-A}
 \begin{longtable}{p{0.55\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
   \toprule
   Criteria & Conformance Level & Remarks and Explanations \\
@@ -264,6 +265,7 @@ In the tables below the success criteria apply to \emph{Web} and
 \end{longtable}
 
 \subsection{Table~2:  Success Criteria, Level~AA}
+\label{sec:WCAG-AA}
 \begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
   \toprule
   Criteria & Conformance Level & Remarks and Explanations \\
@@ -317,6 +319,8 @@ In the tables below the success criteria apply to \emph{Web} and
 \end{longtable}
 
 \subsection{Table~3:  Success Criteria, Level~AAA}
+\label{sec:WCAG-AAA}
+
 \begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
   \toprule
   Criteria & Conformance Level & Remarks and Explanations \\
@@ -387,6 +391,11 @@ In the tables below the success criteria apply to \emph{Web} and
   Error Prevention (All)} (Level~AAA) & Not Applicable\\
 \end{longtable}
 
+\begin{description}
+\item[Note:] Neither \nameref{sec:sec508} nor EN~301~549 requiure
+  AAA~level compliance.
+\end{description}
+
 \clearpage
 \section{Revised Section~508 Report}
 \label{sec:sec508}
@@ -394,6 +403,109 @@ In the tables below the success criteria apply to \emph{Web} and
 \subsection{Chapter 3: Functional Performance Criteria (FPC)}
 \label{sec:508-3}
 
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  302.1 Without Vision
+           & Supports \\ 
+  302.2 With Limited Vision & Supports\\
+  302.3 Without Perception of Color & Supports\\
+  302.4 Without Hearing & Supports\\
+  302.5 With Limited Hearing & Supports\\
+  302.6 Without Speech & Supports\\
+  302.7 With Limited Manipulation & Supports\\
+  302.8 With Limited Reach and Strength & Supports\\
+  302.9 With Limited Language, Cognitive, and Learning Abilities
+           &
+             Does Not Support\\                                                                   
+\end{longtable}
+
+
+\subsection{Chapter 4: Hardware}
+\label{sec:508-4}
+
+
+Does Not Apply.
+
+\subsection{Chapter 5: Software}
+\label{sec:508-5}
+
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  501.1 Scope---Incorporation of WCAG 2.0 AA & Supports & See
+                                                          \nameref{sec:WCAG-AA}\\
+  \multicolumn{3}{c}{\bfseries
+  502 Interoperability with Assistive Technology}\\
+  502.2.1 User Control of Accessibility Features & Supports\\
+  502.2.2 No Disruption of Accessibility Features & Supports\\
+  \multicolumn{3}{c}{\bfseries 502.3 Accessibility Services}\\
+  502.3.1 Object Information & Supports\\
+  502.3.2 Modification of Object Information & Supports\\
+  502.3.3 Row, Column, and Headers & Not Applicable\\
+  502.3.4 Values & Supports\\
+  502.3.5 Modification of Values & Supports\\
+  502.3.6 Label Relationships & Not Applicable\\
+  502.3.7 Hierarchical Relationships & Not Applicable\\
+  502.3.8 Text & Supports\\
+  502.3.9 Modification of Text & Supports\\
+  502.3.10 List of Actions & Supports\\
+  502.3.11 Actions on Objects & Supports\\
+  502.3.12 Focus Cursor & Supports\\
+  502.3.13 Modification of Focus Cursor & Supports\\
+  502.3.14 Event Notification & Supports\\
+  502.4 Platform Accessibility Features & Supports\\
+  \multicolumn{3}{c}{\bfseries 503 Applications}\\
+  503.2 User Preferences & Supports\\
+  503.3 Alternative User Interfaces & Supports\\
+  503.4 User Controls for Captions and Audio Description & Not
+                                                           Applicable\\ 
+  503.4.1 Caption Controls & Not applicable\\
+  503.4.2 Audio Description Controls & Not Applicalbe\\
+  \multicolumn{3}{c}{\bfseries 504 Authoring Tools}\\
+  504.2 Content Creation or Editing (if not authoring tool, enter
+  ``not applicable'') & Not Applicable\\
+  504.2.1 Preservation of Information Provided for Accessibility in
+  Format Conversion & Not Applicable\\
+  504.2.2 PDF Export & Not Applicable\\
+  504.3 Prompts & Not Applicable\\
+  504.4 Templates & Not Applicable\\
+\end{longtable}
+
+\subsection{Chapter 6: Support Documentation and Services}
+\label{sec:508-6}
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+\multicolumn{3}{c}{\bfseries 601.1 Scope}\\
+  \multicolumn{3}{c}{\itshape 602 Support Documentation}\\
+  602.2 Accessibility and Compatibility Features & Supports\\
+  602.3 Electronic Support Documentation & Supports & See
+                                                      \nameref{sec:wcag} \\
+  602.4 Alternate Formats for Non-Electronic Support Documentation &
+                                                                     Not
+                                                                     Applicable
+  \\ 
+  \multicolumn{3}{c}{\itshape 603 Support Services}\\
+  603.2 Information on Accessibility and Compatibility Features & Not
+                                                                  Applicable\\ 
+  603.3 Accommodation of Communication Needs & Not Applicable\\
+\end{longtable}
 
 \end{document}
 
