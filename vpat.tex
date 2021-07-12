@@ -154,7 +154,7 @@ The terms used in the Conformance Level information are defined as follows:
 
 
 \clearpage
-\section{WCAG 2.x Report}
+\section{WCAG~2.x Report}
 \label{sec:wcag}
 
 Tables~1 and~2 also document conformance with:
@@ -392,7 +392,7 @@ In the tables below the success criteria apply to \emph{Web} and
 \end{longtable}
 
 \begin{description}
-\item[Note:] Neither \nameref{sec:sec508} nor EN~301~549 requiure
+\item[Note:] Neither \nameref{sec:sec508} nor \nameref{sec:EN301} requiure
   AAA~level compliance.
 \end{description}
 
@@ -446,10 +446,10 @@ Does Not Apply.
   501.1 Scope---Incorporation of WCAG 2.0 AA & Supports & See
                                                           \nameref{sec:WCAG-AA}\\
   \multicolumn{3}{c}{\bfseries
-  502 Interoperability with Assistive Technology}\\
+  502 Interoperability with Assistive Technology}\\*
   502.2.1 User Control of Accessibility Features & Supports\\
   502.2.2 No Disruption of Accessibility Features & Supports\\
-  \multicolumn{3}{c}{\bfseries 502.3 Accessibility Services}\\
+  \multicolumn{3}{c}{\bfseries 502.3 Accessibility Services}\\*
   502.3.1 Object Information & Supports\\
   502.3.2 Modification of Object Information & Supports\\
   502.3.3 Row, Column, and Headers & Not Applicable\\
@@ -465,14 +465,14 @@ Does Not Apply.
   502.3.13 Modification of Focus Cursor & Supports\\
   502.3.14 Event Notification & Supports\\
   502.4 Platform Accessibility Features & Supports\\
-  \multicolumn{3}{c}{\bfseries 503 Applications}\\
+  \multicolumn{3}{c}{\bfseries 503 Applications}\\*
   503.2 User Preferences & Supports\\
   503.3 Alternative User Interfaces & Supports\\
   503.4 User Controls for Captions and Audio Description & Not
                                                            Applicable\\ 
   503.4.1 Caption Controls & Not applicable\\
   503.4.2 Audio Description Controls & Not Applicalbe\\
-  \multicolumn{3}{c}{\bfseries 504 Authoring Tools}\\
+  \multicolumn{3}{c}{\bfseries 504 Authoring Tools}\\*
   504.2 Content Creation or Editing (if not authoring tool, enter
   ``not applicable'') & Not Applicable\\
   504.2.1 Preservation of Information Provided for Accessibility in
@@ -492,8 +492,8 @@ Does Not Apply.
   \endhead
   \bottomrule
   \endfoot
-\multicolumn{3}{c}{\bfseries 601.1 Scope}\\
-  \multicolumn{3}{c}{\itshape 602 Support Documentation}\\
+\multicolumn{3}{c}{\bfseries 601.1 Scope}\\*
+  \multicolumn{3}{c}{\itshape 602 Support Documentation}\\*
   602.2 Accessibility and Compatibility Features & Supports\\
   602.3 Electronic Support Documentation & Supports & See
                                                       \nameref{sec:wcag} \\
@@ -501,11 +501,225 @@ Does Not Apply.
                                                                      Not
                                                                      Applicable
   \\ 
-  \multicolumn{3}{c}{\itshape 603 Support Services}\\
+  \multicolumn{3}{c}{\itshape 603 Support Services}\\*
   603.2 Information on Accessibility and Compatibility Features & Not
                                                                   Applicable\\ 
   603.3 Accommodation of Communication Needs & Not Applicable\\
 \end{longtable}
+
+
+\clearpage
+\section{EN 301 549 Report}
+\label{sec:EN301}
+
+\subsection{Chapter 4: Functional Performance Statements (FPS)}
+\label{sec:EN301-3}
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  4.2.1 Usage without vision & Supports\\
+  4.2.2 Usage with limited vision & Supports\\
+  4.2.3 Usage without perception of colour & Supports\\
+  4.2.4 Usage without hearing & Supports \\
+  4.2.5 Usage with limited hearing & Supports\\
+  4.2.6 Usage with no or limited vocal capability & Supports \\
+  4.2.7 Usage with limited manipulation or strength & Supports \\ 
+  4.2.8 Usage with limited reach & Supports \\ 
+  4.2.9 Minimize photosensitive seizure triggers & Supports \\
+  4.2.10 Usage with limited cognition, language or learning & Does not
+                                                              support \\
+  4.2.11 Privacy & Supports\\
+\end{longtable}
+
+\subsection{Chapter~5: Generic Requirements}
+\label{sec:EN301-5}
+
+\begin{description}
+\item[Note:] EN~301~549 defines ``closed functionality'' as
+  ``functionality that is limited by characteristics that prevent a
+  user from attaching, installing or using assistive technology''.
+  Since \TeX Live utilities do not prevent users from attaching,
+  installing or using assistive technology, most of requirements in
+  this chapter are not applicable to them.
+\end{description}
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \multicolumn{3}{c}{\bfseries 5.1 Closed functionality}\\*
+  \multicolumn{3}{c}{\itshape 5.1.2 General}\\*
+  5.1.2.1 Closed functionality & Not Applicable\\
+  5.1.2.2 Assistive technology & Not Applicable \\
+  \multicolumn{3}{c}{\itshape 5.1.3 Non-visual access}\\*
+  5.1.3.1 Audio output of visual information & Not Applicable\\
+  5.1.3.2 Auditory output delivery including speech & Not Applicable\\
+  5.1.3.3 Auditory output correlation & Not Applicable\\
+  5.1.3.4 Speech output user control & Not Applicable\\
+  5.1.3.5 Speech output automatic interruption & Not Applicable\\
+  5.1.3.6 Speech output for non-text content & Not Applicable\\
+  5.1.3.7 Speech output for video information & Not Applicable\\
+  5.1.3.8 Masked entry & Not Applicable\\
+  5.1.3.9 Private access to personal data & Not Applicable\\
+  5.1.3.10 Non-interfering audio output & Not Applicable\\
+  5.1.3.11 Private listening volume & Not Applicable\\
+  5.1.3.12 Speaker volume & Not Applicable\\
+  5.1.3.13 Volume reset & Not Applicable\\
+  5.1.3.14 Spoken languages & Not Applicable\\
+  5.1.3.15 Non-visual error identification & Not Applicable\\
+  5.1.3.16 Receipts, tickets, and transactional outputs & Not Applicable\\
+  5.1.4 Functionality closed to text enlargement & Not Applicable\\
+  5.1.5 Visual output for auditory information & Not Applicable\\
+  \multicolumn{3}{c}{\itshape 5.1.6 Operation without keyboard
+  interface}\\*
+  5.1.6.2 Input focus & Not Applicable\\
+  5.1.7 Access without speech & Not Applicable\\
+  5.2 Activation of accessibility features & Not Applicable\\
+  5.3 Biometrics & Not Applicable\\
+  5.4 Preservation of accessibility information during conversion &
+                                                                    Not Applicable\\
+  \multicolumn{3}{c}{\bfseries 5.5 Operable parts}\\*
+  5.5.1 Means of operation & Not Applicable\\
+  5.5.2 Operable parts discernibility & Not Applicable\\
+  \multicolumn{3}{c}{\bfseries 5.6 Locking or toggle controls}\\*
+  5.6.1 Tactile or auditory status & Not Applicable\\
+  5.6.2 Visual status & Not Applicable\\
+  5.7 Key repeat & Not Applicable\\
+  5.8 Double-strike key acceptance & Not Applicable\\
+  5.9 Simultaneous user actions & Not Applicable\\
+\end{longtable}
+
+\subsection{Chapter~6: ICT with Two-Way Voice Communication }
+\label{sec:EN301-6}
+
+Not Applicable.
+
+\subsection{Chapter~7: ICT with Video Capabilities }
+\label{sec:EN301-7}
+
+Not Applicable.
+
+
+\subsection{Chapter~8: Hardware}
+\label{sec:EN301-8}
+
+Not Applicable.
+
+\subsection{Chapter 9: Web}
+\label{sec:EN301-9}
+
+See \nameref{sec:wcag}.
+
+\subsection{Chapter~10: Non-Web Software}
+\label{sec:EN301-10}
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \multicolumn{3}{c}{\bfseries 10.0 General (informative)}\\*
+  10.1.1.1 through 10.4.1.3 & Supports & See \nameref{sec:wcag}\\
+  10.5 Caption positioning & Not Appicable\\
+  10.6 Audio description timing & Not Applicable\\
+\end{longtable}
+
+\subsection{Chapter~11: Software}
+\label{sec:EN301-11}
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \multicolumn{3}{c}{\bfseries 11.0 General (informative)}\\*
+  11.1.1.1 through 11.4.1.3 & Supports & See \nameref{sec:wcag}\\
+  \multicolumn{3}{c}{\bfseries 11.5 Interoperability with assistive
+  technology} \\*
+  \multicolumn{3}{c}{\itshape 11.5.1 Closed functionality}\\*
+  \multicolumn{3}{c}{\itshape 11.5.2 Accessibility services}\\*
+  11.5.2.1 Platform accessibility service support for software that
+  provides a user interface & Supports & See information in 11.5.2.5
+                                         through 11.5.2.17\\  
+  11.5.2.2 Platform accessibility service support for assistive
+  technologies & Supports & See information in 11.5.2.5 through 11.5.2.17\\
+  11.5.2.3 Use of accessibility services & Not Applicable\\
+  11.5.2.4 Assistive technology & Not Applicable\\
+  11.5.2.5 Object information & Not Applicable\\
+  11.5.2.6 Row, column, and headers & Not Applicable \\
+  11.5.2.7 Values & Not Applicable\\
+  11.5.2.8 Label relationships & Not Applicable \\
+  11.5.2.9 Parent-child relationships & Not Applicable\\
+  11.5.2.10 Text & Supports \\
+  11.5.2.11 List of available actions & Supports \\
+  11.5.2.12 Execution of available actions & Supports\\
+  11.5.2.13 Tracking of focus and selection attributes & Not
+                                                         Applicable \\
+  11.5.2.14 Modification of focus and selection attributes & Not
+                                                             Applicable \\
+  11.5.2.15 Change notification & Supports\\
+  11.5.2.16 Modifications of states and properties & Supports\\
+  11.5.2.17 Modifications of values and text & Supports\\
+  \multicolumn{3}{c}{\bfseries 11.6 Documented accessibility usage}\\*
+  11.6.1 User control of accessibility features & Not Applicable\\
+  11.6.2 No disruption of accessibility features & Supports\\
+  11.7 User preferences & Not Applicable\\
+  \multicolumn{3}{c}{\bfseries 11.8 Authoring tools}\\*
+  \multicolumn{3}{c}{\itshape 11.8.1 Content technology}\\*
+  11.8.2 Accessible content creation & Not Applicable\\
+  11.8.3 Preservation of accessibility information in transformations
+           & Not Applicable\\
+  11.8.4 Repair assistance & Not Applicable\\
+  11.8.5 Templates & Not Applicable\\
+\end{longtable}
+
+\subsection{Chapter~12: Documentation and Support Services}
+\label{sec:EN301-12}
+
+\begin{longtable}{p{0.6\textwidth}<{\RaggedRight}p{0.2\textwidth}<{\RaggedRight}p{0.15\textwidth}<{\RaggedRight}}
+  \toprule
+  Criteria & Conformance Level & Remarks and Explanations \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \multicolumn{3}{c}{\bfseries 12.1 Product documentation}\\*
+  12.1.1 Accessibility and compatibility features & Not Applicable\\
+  12.1.2 Accessible documentation & Supports & See \nameref{sec:wcag}\\
+  \multicolumn{3}{c}{\bfseries 12.2 Support Services}\\*
+  12.2.2 Information on accessibility and compatibility features & Not Applicable\\
+  12.2.3 Effective communication & Not Applicable\\
+  12.2.4 Accessible documentation & Not Applicable\\
+\end{longtable}
+
+\subsection{Chapter~13: ICT Providing Relay or Emergency Service
+  Access}
+\label{sec:EN301-13}
+
+Not Applicable.
+
+
+\clearpage
+
+\section{Legal Disclaimer}
+\label{sec:legal}
+
+While all efforts were made to provide an accurate description of the
+software, \TeX\ Users Group cannot make any guarantee, explicit of
+implied, of the accuracy of this report.  This report is provided ``As
+Is'' and for information purposes only.
 
 \end{document}
 
