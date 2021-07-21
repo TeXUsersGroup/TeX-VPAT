@@ -1,0 +1,191 @@
+\documentclass{beamer}
+\usepackage{beamertheme-light}
+\usepackage{siunitx}
+\setlength{\parskip}{\baselineskip}
+
+% Increase footline height to accommodate superscripts
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd =.45\paperwidth, ht = 2.75ex, dp = 1ex, center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\colorbox{structure.bg}{\makebox[0.45\paperwidth]{\vphantom{T\textsuperscript{\textregistered}}\insertshortauthor}}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd =.45\paperwidth, ht = 2.75ex, dp = 1ex, center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\colorbox{structure.bg}{\makebox[0.45\paperwidth]{\insertshorttitle}}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.10\paperwidth, ht = 2.75ex, dp = 1ex, right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\colorbox{structure.bg}{\makebox[0.10\paperwidth]{
+    \vphantom{T\textsuperscript{\textregistered}}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}}}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+\begin{document}
+\author{Boris Veytsman\thanks{George Mason University (US),  \TeX\ Users Group }
+  \and
+Keiran Harcombe\thanks{Open University (UK)}}
+
+\title{Creating \TeX Live VPAT\textsuperscript{\textregistered} statement}
+\date{TUG~2021}
+
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\begin{frame}
+  \frametitle{What is VPAT\textsuperscript{\textregistered} and why do
+    we need it?}
+
+  
+  European and US laws require accessibility features in hardware and
+  software.  Government agencies \& contractors need a formal
+  statement about conformance.  Otherwise they may not be able to use
+  a system, \emph{including \TeX}.  \emph{[Yes, we know that many
+    people with disabilities use \TeX, and we are proud of it.  No, it is
+    not enough for the governments.]}
+
+  \href{https://www.itic.org/}{The Information Technology Industry
+    Council (ITI)} developed
+  \href{https://www.itic.org/policy/accessibility/vpat}{Voluntary
+    Product Accessibility Template
+    (VPAT\textsuperscript{\textregistered})} for this statement.  
+
+  \TeX\ itself: a huge ecosystem with hundreds of programs.  We can
+  \emph{not} offer an accessibility statement for everything.
+  Solution: offer separate statements for \TeX\ distributions.
+
+  \emph{Currently this means \TeX Live.}
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Standards and sources}
+
+  \begin{description}
+  \item[WCAG:] \href{http://www.w3.org/TR/2008/REC-WCAG20-20081211}{Web
+      Content Accessibility Guidelines 2.0} and
+    \href{https://www.w3.org/TR/WCAG21}{Web Content Accessibility
+      Guidelines 2.1}.  Developed for accessibility of Web pages.
+    Used to access accessibility of electronic documentation
+    \emph{including software documentation.}
+    \item[Sec 508:]
+      \href{https://www.access-board.gov/guidelines-and-standards/communications-and-it/about-the-ict-refresh/final-rule/text-of-the-standards-and-guidelines}{Revised
+        Section 508 Standards}.  US Government standard.
+      Incorporates WCAG.
+\item[EN~301~549:] \href{https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.01.01_60/en_301549v030101p.pdf}{EN
+  301 549 Accessibility requirements suitable for public procurement
+  of ICT products and services in Europe.}  European
+standard. Incorporates WCAG.
+\end{description}
+
+There are several versions of VPAT\textsuperscript{\textregistered}.
+Since our distribution is international, we chose \emph{international
+  edition}.  
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{What is our document is and is not}
+
+  \begin{enumerate}
+  \item We do \emph{not} state that the \emph{end product} is
+    accessible or even that one \emph{can} create an accessible
+    product with \TeX\ (but see later!)
+  \item We \emph{do} state that \TeX\ itself is accessible:  a person
+    with certain disabilities can
+    \begin{itemize}
+    \item Learn how to use \TeX Live, and
+    \item Efficiently use \TeX Live.
+    \end{itemize}
+
+  \end{enumerate}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Initial idea (and why it was wrong)}
+
+  \begin{description}
+  \item[Initial thought:] Our tools are command line. Command line is
+    accessible  $\Rightarrow$ our tools are accessible.  Case
+    closed.  
+  \item[Problems] (found when we started the effort):
+    \begin{enumerate}
+    \item Accessible products must have accessible documentation.  Is
+      our documentation accessible?
+    \item Accessible products must satisfy certain criteria.  We must
+      explicitly list them and state the conformance.
+    \end{enumerate}
+
+  \end{description}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{\TeX Live documentation and WCAG standards}
+  \emph{Accessible products must have accessible documentation}.  But
+  current \TeX\ Live has \num{36769} documents.  Are they all
+  accessible? Can we verify this?
+
+  The current decision: certify only the main document,
+  \emph{\href{https://www.tug.org/texlive/doc/texlive-en/texlive-en.html}{The
+      TeX Live Guide—2021}}.
+
+  Results:
+  \begin{enumerate}
+  \item Mostly AA~level compliance.
+  \item We need to provide alt text for all images---even if they are
+    not used in text only regime!
+  \item Providing AAA~level compliance is difficult, and not needed by
+    government standards.
+  \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{\TeX Live Government standards}
+
+  US Government and European Union Standards are different for
+  different types of programs:
+  \begin{description}
+  \item[Web:]  For us it is Web documentations.
+  \item[Electronic Docs:] For us it is our documentation.
+  \item[Software:] Generic programs.
+  \item[Closed systems:] Systems that cannot be connected to
+    accessibility systems (screen readers etc)
+  \item[Authoring tools:] Tools used to create documents.  
+  \end{description}
+
+  We state compliance for Web and Non-web documentation, and software
+  with one exception: \emph{Usage with limited cognition, language or
+    learning.}  
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Results and next steps}
+  The result:  \url{https://github.com/TeXUsersGroup/TeX-VPAT}.
+
+  Next steps (from easy to difficult):
+  \begin{enumerate}
+  \item We need to make \TeX Live documentation fully compliant
+    $\Rightarrow$ add alt text to images.
+  \item We need to make VPAT statement itself fully accessible.
+  \item We must add certification of \TeX\ as authoring tool.  This
+    means tagging PDF.
+  \item We might start making package documentation accessible.  
+  \end{enumerate}
+
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
