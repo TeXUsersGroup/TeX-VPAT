@@ -1,0 +1,207 @@
+\documentclass{ltugboat}
+\usepackage{microtype, siunitx}
+\usepackage[breaklinks,hidelinks]{hyperref}
+\title{Creating \TeX Live \acro{VPAT}\textsuperscript{\textregistered} statement}
+\author{Boris Veytsman}
+\netaddress{borisv (at) lk (dot) net}
+\personalURL{http://borisv.lk.net}
+\address{George Mason University (US),  \TeX\ Users Group}
+\author{Keiran Harcombe}
+\netaddress{kjharcombe (at) hey (dot) com}
+\personalURL{https://kjharcombe.me}
+\address{Open University (UK)}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  Governments around the world are enforcing accessibility standards.
+  Vendors of software used by government agencies are required to file
+  formal statements of accessibility for their products.  This
+  presents a special challenge of open source products, if they are
+  not sponsored by a corporation.
+
+  In this paper we discuss our experience in creation of such a formal
+  statement for \TeX Live.  While command line tools are usually more
+  accessible than \acro{GUI} interfaces, the work turned out to be
+  more difficult than we thought in the beginning.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+If we want to prove that the current scientific and technical progress
+is accompanied by a moral progress, then the changing consensus about
+the people with disabilities may provide a solid argument.  We now
+more and more think that the full participation of disadvantaged
+people in the life of society is not a generous gift from the society
+to them, but rather their right.  Governments now often act to protect
+this right.  In particular, according to the regulations, software
+vendors must make reasonable efforts to make their products
+accessible, and formally report these efforts.  In many countries
+including \acro{US} and \acro{EU} these reports are becoming a
+condition for the software to be used by government agencies and
+contractors.  
+
+This presents a challenge to the free software.  Commercial vendors
+have resources to hire lawyers and experts to create formal compliance
+reports.  Free software like \TeX\ is often created by volunteers
+across the world.  Volunteers are motivated to do ``interesting''
+things rather than wade through pages of regulations and templates.
+On the other hand, the absence of the reports can undermine the usage
+of free software by the public sector and anybody dealing with the
+government agencies, which in the modern society means everybody.  The
+organizations like \tug\ might be useful in this situation, since
+``uninteresting'' work necessary for the free software to thrive is
+clearly in their remit.
+
+In this paper we discuss a pilot project in this vein:  \TeX Live
+\acro{VPAT}\textsuperscript{\textregistered} statement.
+
+\section{Rules, regulations, templates}
+\label{sec:rules}
+
+A template for compliance report was developed by the Information
+Technology Industry Council
+(\acro{ITI})\footnote{\url{https://www.itic.org/}}.  It is available as
+Voluntary Product Accessibility Template
+(\acro{VPAT}\textsuperscript{\textregistered})\footnote{\url{https://www.itic.org/policy/accessibility/vpat}}
+and is free to use.  The template is based on several sources:
+\begin{enumerate}
+\item Web Content Accessibility Guidelines developed by W3 Consortium
+  (\acro{WCAG})\footnote{\url{http://www.w3.org/TR/2008/REC-WCAG20-20081211}
+    and \url{https://www.w3.org/TR/WCAG21}}.
+\item Revised Section 508 Standards by \acro{US}
+  Government\footnote{\url{https://www.access-board.gov/guidelines-and-standards/communications-and-it/about-the-ict-refresh/final-rule/text-of-the-standards-and-guidelines}}.
+\item EN~301~549 Accessibility requirements suitable for public
+  procurement of \acro{ICT} products and services in
+  Europe\footnote{\url{https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.01.01_60/en_301549v030101p.pdf}}.
+\end{enumerate}
+Note that \acro{WCAG} is not, strictly saying, a government standard.
+However both \acro{US} and European standards require compliance with
+\acro{WCAG}, or, in lawyers' lingo, incorporate it.  
+
+\acro{ITI} template has several variants, or ``editions''.  Since
+\TeX\ is used throughout the world, we chose the largest one, the
+International edition, that reports the compliance with both \acro{US}
+and \acro{EU} standards.
+
+The standards consider several following categories of software.
+\emph{Web documents} are documents published on \acro{WWW}, while
+\emph{electronic documents} are documents published in any other
+manner.  Even if a product is not a document by itself, its
+documentation must be accessible and thus comply with \acro{WCAG}
+standards.  \emph{Software} is a generic term for software. The term
+\emph{Closed system} does not mean what we in the Free software mean
+by these words: the standards define closed systems as those which do
+not allow an easy interaction with assistive technologies.  Lastly,
+\emph{Authoring tool} is a software for creation of documents.  The
+compliance report may discuss compliance with any or all of these
+categories, with one exception: documentation is usually a part of any
+category.
+
+\section{Our decisions and the lessons learned}
+\label{sec:decisions}
+
+Initially we thought that our task was easy.  \TeX\ and friends are
+command line tools.  We know that command line tools are very
+accessible: people with low hearing, low vision or blind can use
+command line tools with the existing assistive technology.  However,
+when we got better acquainted with the standards and the requirements,
+we understood this was not as easy as seemed.
+
+First, the compliance report cannot be generic.  We cannot say that
+any implementation of \TeX\ and its ecosystem is accessible.
+Therefore we decided to choose at first a concrete implementation,
+which could be installed and operated with assistive technologies.  We
+chose \TeX Live 2021: our flagship implementation of \TeX\ and
+friends.  We plan to add other implementations to the list in the
+future.
+
+Second, we must report whether the documentation for \TeX\ is
+compliant.  This immediately causes a question, what is \TeX\
+documentation?  At the point we counted it, \TeX Live 2021 had
+\num{36769}~files in the \texttt{doc} tree in various formats: mostly
+text, PostScript, \acro{PDF} and \acro{HTML}.  Obviously many of them
+are not accessible.  Fortunately it is not needed to read them
+\emph{all} to successfully use \TeX Live.  To tell the truth, on
+practice the situation is ameliorated by long standing policy of \TeX
+Live to require source code for all its documentation:  text source
+code can be read by voice software.  
+
+We decided to discuss only one piece of documentation: \TeX Live
+manual in \acro{HTML} format at
+\url{https://www.tug.org/texlive/doc/texlive-en}.
+\acro{WCAG} guidelines define three levels of compliance, denoted as
+\acro{A}, \acro{AA}, and \acro{AAA}.  Only the first two are required
+by the \acro{US} and \acro{EU} standards.  The third one contains
+rather difficult requirements such as automatic explanation of
+abbreviations and special terminology.  However, we found problems
+even on the first two levels.  Namely, the guidelines require
+alternative text for all images.  \TeX Live manual has images for
+\acro{GUI} installation mode.  One can argue that these images are
+not especially relevant for low vision users, who are probably going
+to use text mode installation anyway.  However, this is a weak
+argument, and we need to make the manual fully accessible.
+
+Further, the category \emph{closed systems} is evidently not
+applicable for \TeX Live: it is open not only as open source software,
+but also as software which allows the user to integrate it with the
+assistive technologies.
+
+We hit a snag, however, when looking into the requirements for
+\emph{authoring tools}.  Simply saying, these requirements say that
+the software is not just accessible by itself, but also the documents
+it creates are accessible.  Now \tug\ and the \TeX\ community has put
+considerable efforts in creating the tools for accessible output, like
+tagged \acro{PDF}.  However, at present the creation of accessible
+documents with \TeX, while possible, still requires certain efforts.
+Thus we made a decision not yet to make a statement about \TeX Live as
+an authoring tool.  Simply saying, we state that, for example, a
+blind person can efficiently learn and use \TeX\ to create a
+document.  However we do \emph{not} state that this document will be
+accessible even to its author.  This is a sad situation, but hopefully
+it will be ameliorated soon.
+
+The resulting draft statement is available at
+\url{https://github.com/TeXUsersGroup/TeX-VPAT}.
+
+\section{Next steps}
+\label{sec:next_steps}
+
+Our work showed that there is much to do with \TeX\ compliance
+documentation.
+
+First, we must make \TeX Live manual fully compliant by adding alt
+text to all images.
+
+Second, we need to make the statement itself fully accessible, either
+in \acro{PDF} or \acro{HTML} format, or both.
+
+Third, we need to add separate statements for other distributions:
+Mac\TeX, Mik\TeX, pro\TeX t\ldots\  We would like to invite volunteers
+best acquainted with these distributions to help with them:  we hope it
+might be easy enough to follow our example.
+
+Fourth, it is important to add the statement about \TeX\ as an
+authoring tool.  Perhaps we may put the statements about Con\TeX t,
+which has currently good capabilities for creation of tagged
+\acro{PDF}, or the usage of \textsl{tex4ht} for creation of accessible
+\acro{HTML} files.  This requires further research and decisions.
+
+The task of making all \TeX Live documentation accessible seems to be
+very difficult, but we might start with the guidelines for package
+authors.
+
+Last but not least, we plan to release the statement as a \acro{CTAN}
+package.
+
+Making \TeX\ accessible is an ongoing process.  We are glad to be a
+part of it.
+
+\makesignature
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
