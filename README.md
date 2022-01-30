@@ -13,3 +13,5 @@ Creative Commons Attribution 3.0 Unported License.
 
 You should have received a copy of the license along with this
 work.  If not, see [http://creativecommons.org/licenses/by/3.0/](http://creativecommons.org/licenses/by/3.0/). 
+
+Version 2.0:  updated to the new release of TeXLive manual
