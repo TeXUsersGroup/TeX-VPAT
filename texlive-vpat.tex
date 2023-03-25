@@ -1,9 +1,13 @@
 % !Mode:: "TeX:UTF-8:Main"
 % Use lualatex!!
+\ifx\HCode\Undef
 \DocumentMetadata{uncompress,
  %pdfversion=2.0,
  pdfversion=1.7,pdfstandard=ua-1,
-testphase=phase-III}
+ testphase=phase-III}
+\else
+\DocumentMetadata{uncompress}
+\fi
 \documentclass[titlepage]{article}
 \usepackage{graphicx}
 \usepackage{array,longtable}
@@ -173,7 +177,10 @@ testphase=phase-III}
   {\addlinespace[0.5\defaultaddspace]
    \multicolumn{3}{\vpatcolssubhead}{\textit{#1~#2}} 
    \\*}
-  
+
+
+ 
+ 
 \pagestyle{headings}  
 
 
@@ -183,7 +190,7 @@ testphase=phase-III}
   (International Edition)\\
 (Based upon VPAT\textsuperscript{\textregistered} version~2.4)}
 \author{\TeX\ Users Group}
-\date{Version 2.1, June 2022}
+\date{Version 2.2, March 2023}
 
 \hypersetup{
   pdftitle=TeX Live Accessibility Conformance Report,
@@ -200,13 +207,13 @@ testphase=phase-III}
 \section{Name of Product/Version}
 \label{sec:name}
 
-\TeX Live 2022.
+\TeX Live 2023.
 
 
 \section{Report Date}
 \label{sec:date}
 
-June 2022.
+March 2023.
 
 
 \section{Product Description}
@@ -216,8 +223,8 @@ June 2022.
 supported by \TeX\ Users Group, a membership-based not-for-profit
 organization dedicated to support, promotion and advocacy of \TeX\
 typesetting system created by Donald Knuth and maintained by the
-international community of developers.  As of 2022 \TeX Live contains
-more than 470~programs and more than 7600~software packages.
+international community of developers.  As of 2023 \TeX Live contains
+more than 470~programs and more than 7660~software packages.
 
 \section{Contact Information}
 \label{sec:contact_info}

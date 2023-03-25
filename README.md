@@ -6,13 +6,15 @@ Currently it covers TeXLive. Other distributions can be added if needed.
 
 The report is produced by [Tex Users Group](https://tug.org).
 
-TeX VPAT Statement (c) 2021-2022 by TeX Users Group
+TeX VPAT Statement (c) 2021-2023 by TeX Users Group
 
 TeX VPAT is licensed under a
 Creative Commons Attribution 3.0 Unported License.
 
 You should have received a copy of the license along with this
 work.  If not, see [http://creativecommons.org/licenses/by/3.0/](http://creativecommons.org/licenses/by/3.0/). 
+
+Version 2.2:  new accessible PDF (thanks to Ulrike Fischer and L3 team). Updated to TeXLive 2023
 
 Version 2.1:  updated to TeXLive 2022
 
