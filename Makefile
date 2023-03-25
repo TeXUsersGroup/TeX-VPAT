@@ -9,9 +9,9 @@ HTML = ${SRC:%.tex=%.html} ${SRC:%.tex=%.css}
 all: ${PDF} ${HTML}
 
 %.pdf: %.tex
-	pdflatex $<
+	lualatex $<
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
-	do pdflatex $<; done
+	do lualatex $<; done
 
 
 %.html: %.tex
