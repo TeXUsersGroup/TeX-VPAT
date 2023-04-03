@@ -29,7 +29,7 @@ clean:
 	*.4ht *.4ct *.4tc *.tmp *.idv *.lg *.xref
 
 distclean: clean
-	$(RM) ${PDF} ${HTML}
+	$(RM) ${PDF} ${HTML} *.html
 
 archive:  all clean
 	COPYFILE_DISABLE=1 tar  -czvf ../$(PACKAGE).tgz --exclude '*~' \
