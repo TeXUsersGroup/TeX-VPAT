@@ -14,6 +14,8 @@ Creative Commons Attribution 3.0 Unported License.
 You should have received a copy of the license along with this
 work.  If not, see [http://creativecommons.org/licenses/by/3.0/](http://creativecommons.org/licenses/by/3.0/). 
 
+Version 2.4: Updated to TeXLive 2024.
+
 Version 2.3: compressed PDF. Makefile now requires lualatex-dev. 
 
 Version 2.2:  new accessible PDF (thanks to Ulrike Fischer and L3 team). Updated to TeXLive 2023
