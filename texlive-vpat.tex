@@ -4,10 +4,16 @@
 \DocumentMetadata{
  %pdfversion=2.0,
  pdfversion=1.7,pdfstandard=ua-1,
- testphase=phase-III}
+ testphase={phase-III,title,table,firstaid}}
+ \tagpdfsetup{table/header-rows=1}
 \else
 \DocumentMetadata{}
 \fi
+% TEMPORARLY to correct a bug:
+\ExplSyntaxOn
+\tl_set:Nn \l__fnote_dflt_struct_tl {2}
+\ExplSyntaxOff
+
 \documentclass[titlepage]{article}
 \usepackage{graphicx}
 \usepackage{array,longtable}
@@ -19,29 +25,6 @@
 
 \setcounter{secnumdepth}{-1}
 
-%table tagging (as maketitle contains a tabular, delay after the first shipout):
-\AddToHookNext{shipout/after}{% 
-\AddToHook{env/tabular/before}{\par\tagpdfparaOff\tagstructbegin{tag=Table}}
-\AddToHook{env/tabular/after}{\tagstructend\par\tagpdfparaOn}}
-
-\ExplSyntaxOn
-\AddToHook{env/longtable/before}
- {
-  \par
-  \group_begin:
-  \tagpdfparaOff
-  \tl_set:Nx \l__fnote_dflt_struct_tl{\tag_get:n{struct_num}}
-  \tagstructbegin{tag=Table}
- }
-\AddToHook{env/longtable/after}
-  {
-   \tagstructend
-   \par
-   \group_end:
-  }
-\ExplSyntaxOff
-
-
 \newlength\vpatconfcollen
 \newlength\vpatnumcollen
 \newlength\vpattempcollen
@@ -49,123 +32,46 @@
 \AtBeginDocument{%
  \settowidth\vpatconfcollen{Conformance Level}}
 
-\newcommand\celltag{TD}
-\newcommand\cellattribute{}
-\newcommand\rowattribute{}
-
-\tagpdfsetup{  
- newattribute = {TH-col} {/O /Table /Scope /Column},
- newattribute = {TH-2col}{/O /Table /Scope /Column /ColSpan 2},
- newattribute = {TD-3col}{/O /Table /ColSpan 3},
- }
-
-\newcommand\startheader
- {\gdef\celltag{TH}%
-  \gdef\cellattribute{TH-col}% 
-  %\tagstructbegin{tag=THead} %consider later
-  }
-
-\newcommand\stopheader
- {%\tagstructend %consider later if THead
-  \gdef\celltag{TD}%
-  \gdef\cellattribute{}% 
- }
- 
-% attribute-class would be more consistent, but acrobat can't handle it ...  
-\newcommand\startrowcell{%
-  \tagstructbegin{tag=TR,attribute-class=\rowattribute}%
-  \tagstructbegin{tag=\celltag,attribute=\cellattribute}%
-  \tagmcbegin{}%
- } 
-\newcommand\stoprowcell{%
-  \tagmcend
-  \tagstructend %TD/TH
-  \tagstructend %TR
- } 
- 
-\newcommand\startcell{%
-  \tagstructbegin{tag=\celltag,attribute=\cellattribute}%
-  \tagmcbegin{}%
- } 
-\newcommand\stopcell{%
-  \tagmcend
-  \tagstructend %TDTH
- }  
-    
-\newcommand\startartifactcell{\tagmcbegin{artifact}}   
-\newcommand\stopartifactcell{\tagmcend}
- 
 % column definition for standard table (2 cols)
 \newcolumntype{\vpatcolsstandard}
- {>{\startrowcell}
-  p{\dimexpr\textwidth-\vpattempcollen-4\tabcolsep}
-  <{\stopcell} 
-  >{\startcell}
-  l
-  <{\stoprowcell}}
+ {p{\dimexpr\textwidth-\vpattempcollen-4\tabcolsep}l}
 
 
 % columns for other tables (3 cols)    
 \newcommand\vpattablehead{%
   \toprule
-  \noalign{\startheader}%
   \multicolumn{2}
-   {
-    >{\def\cellattribute{TH-2col}\startrowcell}
-     l
-    <{\stopcell} 
-   }
+   {l}
    {Criteria} 
    &
    \multicolumn{1}
-    {
-      >{\def\cellattribute{TH-col}\startcell}
-      p{\vpatconfcollen}<{\RaggedRight\stoprowcell}
-    }
+    {p{\vpatconfcollen}<{\RaggedRight}}
     {Conformance Level}   
    \\ %drop "Remarks and Explanations"
-  \midrule
-  \noalign{\stopheader}}
+  \midrule}
   
 \newcommand\vpattableheadcont{%
   \toprule
   \multicolumn{2}
-   {
-    >{\startartifactcell}
-     l
-    <{\stopartifactcell} 
-   }
+   {l}
    {Criteria} 
    &
    \multicolumn{1}
-    {
-      >{\startartifactcell}
-      p{\vpatconfcollen}<{\RaggedRight\stopartifactcell}
-    }
+    {p{\vpatconfcollen}<{\RaggedRight}}
     {Conformance Level}   
    \\ %drop "Remarks and Explanations"
   \midrule  
    }  
       
 \newcolumntype\vpatcols
-   {
-    >{\startrowcell}
-    p{\vpatnumcollen}
-    <{\stopcell}
-    >{\startcell}  
+   {p{\vpatnumcollen}
     p{\dimexpr\textwidth-\vpatconfcollen-\vpatnumcollen-6\tabcolsep}
-    <{\RaggedRight
-      \stopcell}
-    >{\startcell}      
+    <{\RaggedRight}         
     p{\vpatconfcollen}
-    <{\RaggedRight
-      \stoprowcell
-     }} 
+    <{\RaggedRight}} 
    
-\newcolumntype\vpatcolssubhead{%
- >{\def\cellattribute{TD-3col}\startrowcell}
- l
- <{\stoprowcell}}
+
+\newcolumntype\vpatcolssubhead{l}
   
 \newcommand\vpattablesubhead[2]
   {\addlinespace
@@ -185,6 +91,7 @@
 
 
 \begin{document}
+
 \pagenumbering{roman} %make hyperref happy
 \title{\TeX Live Accessibility Conformance Report\\
   (International Edition)\\
@@ -299,12 +206,11 @@ The testing was based on the general product knowledge.
 \settowidth\vpattempcollen{Included in the report}
 
 \begin{tabular}{\vpatcolsstandard}
-\noalign{\startheader}
 \toprule
  Standard/Guideline 
  &
   Included in the report 
- \\ \noalign{\stopheader} 
+ \\ 
   \midrule
   \href{http://www.w3.org/TR/2008/REC-WCAG20-20081211}{Web Content
   Accessibility Guidelines 2.0} & Level A (Yes) \\
